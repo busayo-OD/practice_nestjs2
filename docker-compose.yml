@@ -10,6 +10,16 @@ services:
       - postgres-data:/var/lib/postgresql/data
     ports:
       - '5432:5432'
+  test-db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=bus02ay94
+      - POSTGRES_DB=nest
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - '5435:5432'
 volumes:
   postgres-data:
     
